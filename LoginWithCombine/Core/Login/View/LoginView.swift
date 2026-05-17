@@ -151,9 +151,9 @@ struct LoginView: View {
                     .fontWeight(.medium)
                     .foregroundStyle(Color.theme.loginButton)
             }
-            .navigationDestination(isPresented: $navigateToForgotPassword) {
-                ForgotPasswordView()
-            }
+//            .navigationDestination(isPresented: $navigateToForgotPassword) {
+//                ForgotPasswordView()
+//            }
         }
     }
     
