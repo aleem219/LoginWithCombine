@@ -9,26 +9,26 @@ import SwiftUI
 
 // MARK: - Tab Enum
 enum TabItem: String, CaseIterable {
-    case Carts
-    case music
-    case favorites
-    case contacts
+    case home
+    case cart
+    case favourite
+    case user
     
     var icon: String {
         switch self {
-        case .Carts: return   "house"
-        case .music: return "cart.fill"
-        case .favorites: return "heart"
-        case .contacts: return "person.crop.circle"
+        case .home: return   "house"
+        case .cart: return "cart.fill"
+        case .favourite: return "heart"
+        case .user: return "person.crop.circle"
         }
     }
     
     var label: String {
         switch self {
-        case .Carts: return "Home"
-        case .music: return "Cart"
-        case .favorites: return "Favourite"
-        case .contacts: return "User"
+        case .home: return "Home"
+        case .cart: return "Cart"
+        case .favourite: return "Favourite"
+        case .user: return "User"
         }
     }
 }
@@ -80,5 +80,5 @@ struct CustomTabBar: View {
 }
 
 #Preview {
-    CustomTabBar(selectedTab: .constant(.Carts))
+    CustomTabBar(selectedTab: .constant(.home))
 }

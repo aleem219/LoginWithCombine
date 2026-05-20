@@ -9,7 +9,7 @@ import SwiftUI
 struct TabbarView: View {
     
     @Environment(LoginViewModel.self) private var vm
-    @State private var selectedTab: TabItem = .Carts
+    @State private var selectedTab: TabItem = .home
     @State private var userViewModel = UserViewModel()
     @State private var path: [User] = []
     @State private var notificationViewModel = NotificationViewModel()
@@ -22,33 +22,23 @@ struct TabbarView: View {
         
         NavigationStack {
             ZStack(alignment: .bottom) {
-                
                 Color.theme.loginButton
                     .opacity(0.3)
                     .ignoresSafeArea()
-                
                 VStack {
                     Spacer()
-                    
                     switch selectedTab {
-                    case .Carts:
-                        
-//                        Text("Music")
-//                            .font(.largeTitle)
+                    case .home:
                         HomeView()
-                    case .contacts:
-                        UserView()
-                            .environment(userViewModel)
-                        
-                    case .music:
-                        
+                    case .cart:
                         CartView()
-                        
-                    case .favorites:
+                    case .favourite:
                         Text("Favorites")
                             .font(.largeTitle)
+                    case .user:
+                        UserView()
+                            .environment(userViewModel)
                     }
-                    
                     Spacer()
                 }
                 .safeAreaInset(edge: .bottom) {
