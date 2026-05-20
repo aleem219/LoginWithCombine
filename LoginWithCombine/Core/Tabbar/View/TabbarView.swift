@@ -42,7 +42,7 @@ struct TabbarView: View {
                         
                     case .music:
                         
-                        ProductView()
+                        CartView()
                         
                     case .favorites:
                         Text("Favorites")

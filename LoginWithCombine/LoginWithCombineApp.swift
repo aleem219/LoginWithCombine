@@ -14,6 +14,7 @@ struct LoginWithCombineApp: App {
     @State private var vm = LoginViewModel()
     @State private var userViewModel = UserViewModel()
     @State private var userDetailViewModel = UserDetailViewModel()
+    @State private var cartViewModel = CartViewModel()
     
     var body: some Scene {
         WindowGroup {
@@ -24,6 +25,7 @@ struct LoginWithCombineApp: App {
                     }
                     .environment(userViewModel)
                     .environment(userDetailViewModel)
+                    .environment(cartViewModel)
                 } else {
                     NavigationStack {
                         LoginView()
@@ -32,5 +34,4 @@ struct LoginWithCombineApp: App {
             }
             .environment(vm)
         }
-    }
-}
+    }}

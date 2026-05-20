@@ -22,6 +22,15 @@ enum TabItem: String, CaseIterable {
         case .contacts: return "person.crop.circle"
         }
     }
+    
+    var label: String {
+        switch self {
+        case .Carts: return "Home"
+        case .music: return "Cart"
+        case .favorites: return "Favourite"
+        case .contacts: return "User"
+        }
+    }
 }
 
 // MARK: - Custom Tab Bar
@@ -44,11 +53,15 @@ struct CustomTabBar: View {
                                 .frame(width: 70, height: 45)
                         }
                         
-                        Image(systemName: tab.icon)
-                            .font(.system(size: 22))
-                            .foregroundColor(
-                                selectedTab == tab ? Color.theme.loginButton : .gray
-                            )
+                        VStack(spacing: 3) {
+                            Image(systemName: tab.icon)
+                                .font(.title3)
+                            Text(tab.label)
+                                .font(.caption2)
+                        }
+                        .foregroundColor(
+                            selectedTab == tab ? Color.theme.loginButton : .gray
+                        )
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
